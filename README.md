@@ -1,3 +1,5 @@
+Forked from: https://pypi.python.org/pypi/pyprintr
+
 Python-printr (or PyPrintr) is a recursive printing objects module that allows
 to emulate the print_r() function of PHP  by printing the objects properties of
 a class instance and its internal structure. 
@@ -18,6 +20,9 @@ a class instance and its internal structure.
 **Contributors:**
     Alejandro Ramirez
     http://www.ramirezalejandro.com.ar/
+
+    Adolfo Fitoria
+    http://fitoria.net
 
 
 **Licence:** 
