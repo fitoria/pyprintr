@@ -16,16 +16,18 @@
      Developed by:
         F. Eugenia Bahit
         http://www.eugeniabahit.com/
-    
+
      Contributors:
         R. Alejandro Ramirez
         http://www.ramirezalejandro.com.ar/
-        
+
         Mariano García Berrotaran
-    
+
+        Adolfo Fitoria
+
      Licence:
         GPL v3.0
-        
+
     =========================================================================
      BASIC USAGE
     =========================================================================
@@ -38,8 +40,8 @@
 
             def __init__(self):
                 self.color = ''
-                
-                
+
+
         class Marco(object):
 
             def __init__(self):
@@ -49,7 +51,7 @@
 
 
         class Ventana(object):
-            
+
             def __init__(self):
                 self.posicion = ''
                 self.marco = Marco()
@@ -80,7 +82,7 @@
      ADVANCED USE
     =========================================================================
     You can set the character using for identation. By default is white space.
-    
+
     -------------------------------------------------------------------------
      IDENTATION CHAR
     -------------------------------------------------------------------------
@@ -102,9 +104,11 @@
         myobject = MyClass()
         printr.printr(myobject)
 """
+from __future__ import  print_function
+
 __author__ = "Eugenia Bahit"
 __copyright__ = "Copyright 2011, Eugenia Bahit"
-__credits__ = ["Ruben Alejandro Ramirez", "Mariano Garcia Berrotaran"]
+__credits__ = ["Ruben Alejandro Ramirez", "Mariano Garcia Berrotaran", "Adolfo Fitoria"]
 __license__ = "GPL v 3.0"
 __version__ = "1.0"
 __maintainer__ = "Eugenia Bahit"
@@ -149,15 +153,15 @@ def printr(obj, tabs=TAB_WIDTH, object_as_element=False):
     """
 
     if tabs == TAB_WIDTH or object_as_element:
-        print get_human_object_name(obj)
+        print(get_human_object_name(obj))
 
     ident = IDENTATION_CHAR * tabs
     spaces = IDENTATION_CHAR * (tabs + TAB_WIDTH)
 
-    print "%s{" % ident
+    print("%s{" % ident)
 
-    for prop, value in vars(obj).iteritems():
-        print "%s%s: %s" % (spaces, prop, get_human_value(value))
+    for prop, value in vars(obj).items():
+        print("%s%s: %s" % (spaces, prop, get_human_value(value)))
 
         if str(value).startswith('<') and str(value).endswith('>'):
             printr(value, (tabs + TAB_WIDTH))
@@ -168,5 +172,5 @@ def printr(obj, tabs=TAB_WIDTH, object_as_element=False):
                 for elemento in value:
                     printr(elemento, (tabs + TAB_WIDTH), True)
 
-    print "%s}" % ident
+    print("%s}" % ident)
 
